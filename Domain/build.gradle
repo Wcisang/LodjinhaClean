@@ -1,8 +1,15 @@
-apply plugin: 'java-library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    def dep = rootProject.ext.domainDependencies
+    implementation dep.gson
+    implementation dep.kotlinStd
+    implementation dep.kotlinReflect
+    implementation dep.javaxAnnotation
+    implementation dep.javaxInject
+    implementation dep.rxJava
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+sourceCompatibility = "1.6"
+targetCompatibility = "1.6"
