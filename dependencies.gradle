@@ -20,4 +20,10 @@ ext {
             javaxInject: javaxInject,
             rxJava: rxJava
     ]
+
+    dataDependencies = [
+            rxJava: rxJava,
+            javaxAnnotation: javaxAnnotation,
+            javaxInject: javaxInject
+    ]
 }

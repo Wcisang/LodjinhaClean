@@ -2,6 +2,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin'
 
 dependencies {
+
     def dep = rootProject.ext.domainDependencies
     implementation dep.gson
     implementation dep.kotlinStd
