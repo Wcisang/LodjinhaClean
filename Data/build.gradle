@@ -2,11 +2,15 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin'
 
 dependencies {
-    compile project(':Domain')
+    implementation project(':Domain')
 
     def dep = rootProject.ext.dataDependencies
 
     implementation dep.rxJava
+    implementation dep.retrofit
+    implementation dep.retrofitGsonConverter
+    implementation dep.javaxAnnotation
+    implementation dep.javaxInject
 }
 
 sourceCompatibility = "1.6"

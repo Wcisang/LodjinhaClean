@@ -7,9 +7,9 @@ import br.com.wcisang.domain.repository.BannerRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
-class GetBanners @Inject constructor(
+class GetBannersUseCase @Inject constructor(
     var bannerRepository: BannerRepository,
-    var postExecutionThread: PostExecutionThread
+    postExecutionThread: PostExecutionThread
 ) : SingleUseCase<List<Banner>, Nothing>(postExecutionThread){
 
 

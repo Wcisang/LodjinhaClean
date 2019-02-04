@@ -3,6 +3,10 @@ ext {
     rxJavaVersion = '2.0.2'
     javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
+    retrofitVersion = '2.4.0'
+    daggerVersion = '2.21'
+    rxKotlinVersion = '2.1.0'
+    rxAndroidVersion = '2.0.1'
 
     gson = "com.google.code.gson:gson:$gsonVersion"
     kotlinStd = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
@@ -10,6 +14,16 @@ ext {
     javaxAnnotation = "javax.annotation:jsr250-api:${javaxAnnotationVersion}"
     javaxInject = "javax.inject:javax.inject:${javaxInjectVersion}"
     rxJava = "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}"
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    daggerCompiler = "com.google.dagger:dagger-compiler:${daggerVersion}"
+    dagger = "com.google.dagger:dagger:${daggerVersion}"
+    daggerSupport = "com.google.dagger:dagger-android-support:${daggerVersion}"
+    daggerProcessor = "com.google.dagger:dagger-android-processor:${daggerVersion}"
+    rxKotlin = "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}"
+    rxAndroid = "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
+
 
 
     domainDependencies = [
@@ -23,6 +37,19 @@ ext {
 
     dataDependencies = [
             rxJava: rxJava,
+            javaxAnnotation: javaxAnnotation,
+            javaxInject: javaxInject,
+            retrofit: retrofit,
+            retrofitGsonConverter: retrofitGsonConverter,
+    ]
+
+    uiDependencies = [
+            daggerCompiler: daggerCompiler,
+            dagger: dagger,
+            rxKotlin: rxKotlin,
+            rxAndroid: rxAndroid,
+            daggerSupport: daggerSupport,
+            daggerProcessor: daggerProcessor,
             javaxAnnotation: javaxAnnotation,
             javaxInject: javaxInject
     ]
