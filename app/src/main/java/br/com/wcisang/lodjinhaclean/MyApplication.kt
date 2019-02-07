@@ -2,6 +2,7 @@ package br.com.wcisang.lodjinhaclean
 
 import android.app.Activity
 import android.app.Application
+import br.com.wcisang.lodjinhaclean.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -14,6 +15,11 @@ class MyApplication : Application(), HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
+        DaggerAppComponent
+            .builder()
+            .application(this)
+            .build()
+            .inject(this)
     }
 
 

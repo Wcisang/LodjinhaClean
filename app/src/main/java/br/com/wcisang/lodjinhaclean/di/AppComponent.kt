@@ -2,10 +2,7 @@ package br.com.wcisang.lodjinhaclean.di
 
 import android.app.Application
 import br.com.wcisang.lodjinhaclean.MyApplication
-import br.com.wcisang.lodjinhaclean.di.module.ActivityBuilderModule
-import br.com.wcisang.lodjinhaclean.di.module.ApplicationModule
-import br.com.wcisang.lodjinhaclean.di.module.DataModule
-import br.com.wcisang.lodjinhaclean.di.module.ViewModelModule
+import br.com.wcisang.lodjinhaclean.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

@@ -2,14 +2,12 @@ package br.com.wcisang.lodjinhaclean.ui.home
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import br.com.wcisang.lodjinhaclean.R
 import br.com.wcisang.lodjinhaclean.ui.BaseFragment
-import javax.inject.Inject
 
 class HomeFragment : BaseFragment<HomeViewModel>() {
 
@@ -23,6 +21,11 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getBanners()
     }
 
 

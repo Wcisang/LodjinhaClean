@@ -1,6 +1,7 @@
 package br.com.wcisang.data.remote.service
 
 import br.com.wcisang.data.remote.response.BannerResponse
+import br.com.wcisang.data.remote.response.CategoriasResponse
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.GET
@@ -13,8 +14,8 @@ interface LodjinhaService {
     @GET("/banner")
     fun getBanners(): Single<BannerResponse>
 
-//    @GET("/categoria")
-//    fun getCategories(): Single<CategoriesResponse>
+    @GET("/categoria")
+    fun getCategorias(): Single<CategoriasResponse>
 //
 //    @GET("/produto/maisvendidos")
 //    fun getBestSellingProducts(): Single<BestSellingProductsResponse>

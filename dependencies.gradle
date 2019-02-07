@@ -7,6 +7,9 @@ ext {
     daggerVersion = '2.21'
     rxKotlinVersion = '2.1.0'
     rxAndroidVersion = '2.0.1'
+    archCompVersion = '2.0.0'
+    okHttpVersion = '3.8.1'
+    retrofitVersion = '2.3.0'
 
     gson = "com.google.code.gson:gson:$gsonVersion"
     kotlinStd = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
@@ -14,8 +17,6 @@ ext {
     javaxAnnotation = "javax.annotation:jsr250-api:${javaxAnnotationVersion}"
     javaxInject = "javax.inject:javax.inject:${javaxInjectVersion}"
     rxJava = "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}"
-    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
     daggerCompiler = "com.google.dagger:dagger-compiler:${daggerVersion}"
     dagger = "com.google.dagger:dagger:${daggerVersion}"
@@ -24,7 +25,13 @@ ext {
     rxKotlin = "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}"
     rxAndroid = "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
 
+    archCompExtensions = "androidx.lifecycle:lifecycle-extensions:${archCompVersion}"
 
+    okHttp = "com.squareup.okhttp3:okhttp:${okHttpVersion}"
+    okHttpLogger = "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+    retrofit = "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    retrofitConverter = "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    retrofitAdapter = "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
 
     domainDependencies = [
             gson: gson,
@@ -40,7 +47,10 @@ ext {
             javaxAnnotation: javaxAnnotation,
             javaxInject: javaxInject,
             retrofit: retrofit,
-            retrofitGsonConverter: retrofitGsonConverter,
+            retrofitGsonConverter: retrofitConverter,
+            okHttp: okHttp,
+            okHttpLogger: okHttpLogger,
+            retrofitAdapter: retrofitAdapter
     ]
 
     uiDependencies = [
@@ -51,6 +61,7 @@ ext {
             daggerSupport: daggerSupport,
             daggerProcessor: daggerProcessor,
             javaxAnnotation: javaxAnnotation,
-            javaxInject: javaxInject
+            javaxInject: javaxInject,
+            archCompExtensions: archCompExtensions
     ]
 }

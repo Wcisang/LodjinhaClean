@@ -11,6 +11,9 @@ dependencies {
     implementation dep.retrofitGsonConverter
     implementation dep.javaxAnnotation
     implementation dep.javaxInject
+    implementation dep.okHttp
+    implementation dep.okHttpLogger
+    implementation dep.retrofitAdapter
 }
 
 sourceCompatibility = "1.6"

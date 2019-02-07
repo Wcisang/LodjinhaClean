@@ -38,6 +38,7 @@ dependencies {
     implementation dep.daggerSupport
     implementation dep.javaxAnnotation
     implementation dep.javaxInject
+    implementation dep.archCompExtensions
     kapt dep.daggerCompiler
     kapt dep.daggerProcessor
 
