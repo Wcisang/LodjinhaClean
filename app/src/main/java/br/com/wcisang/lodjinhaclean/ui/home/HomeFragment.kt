@@ -26,6 +26,8 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getBanners()
+        viewModel.getCategorias()
+        viewModel.getBestSellers()
     }
 
 

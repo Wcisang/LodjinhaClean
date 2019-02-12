@@ -8,7 +8,7 @@ data class Produto (
     @SerializedName("categoria") var categoria: Categoria,
     @SerializedName("descricao") var descricao: String,
     @SerializedName("nome") var nome: String,
-    @SerializedName("precoDe") var precoDe: Int,
-    @SerializedName("precoPor") var precoPor: Int,
+    @SerializedName("precoDe") var precoDe: Float,
+    @SerializedName("precoPor") var precoPor: Float,
     @SerializedName("urlImagem") var urlImagem: String
 ) : Serializable

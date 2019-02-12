@@ -1,4 +1,4 @@
-package br.com.wcisang.domain.interactor.categoria
+package br.com.wcisang.domain.interactor.banner
 
 import br.com.wcisang.domain.executor.PostExecutionThread
 import br.com.wcisang.domain.interactor.SingleUseCase

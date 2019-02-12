@@ -1,9 +1,9 @@
-package br.com.wcisang.data.remote.source.product
+package br.com.wcisang.domain.repository
 
 import br.com.wcisang.domain.model.Produto
 import io.reactivex.Single
 
-interface ProdutoRemoteDataSource {
+interface ProdutoRepository {
 
     fun getBestSellers() : Single<List<Produto>>
 }
