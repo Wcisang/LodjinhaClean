@@ -6,4 +6,6 @@ import io.reactivex.Single
 interface ProdutoRepository {
 
     fun getBestSellers() : Single<List<Produto>>
+
+    fun getProductList(categoryId: Int) : Single<List<Produto>>
 }

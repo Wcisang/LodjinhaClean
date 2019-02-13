@@ -14,4 +14,10 @@ class ProdutoRemoteDataSourceImpl @Inject constructor(
             .getBestSellingProducts()
             .map { it.data }
     }
+
+    override fun getProductList(categoryId: Int): Single<List<Produto>> {
+        return lodjinhaService
+            .getProducts(categoryId)
+            .map { it.data }
+    }
 }

@@ -12,6 +12,10 @@ class ProdutoRepositoryImpl @Inject constructor(
     var produtoLocalDataSource: ProdutoLocalDataSource
 ): ProdutoRepository {
 
+    override fun getProductList(categoryId: Int): Single<List<Produto>> {
+        return produtoRemoteDataSource.getProductList(categoryId)
+    }
+
     override fun getBestSellers(): Single<List<Produto>> {
         return produtoRemoteDataSource.getBestSellers()
     }

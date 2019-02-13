@@ -2,6 +2,7 @@ package br.com.wcisang.data.remote.service
 
 import br.com.wcisang.data.remote.response.BannerResponse
 import br.com.wcisang.data.remote.response.CategoriasResponse
+import br.com.wcisang.data.remote.response.ProductsResponse
 import br.com.wcisang.data.remote.response.ProdutoBestSellersResponse
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -20,13 +21,11 @@ interface LodjinhaService {
 
     @GET("/produto/maisvendidos")
     fun getBestSellingProducts(): Single<ProdutoBestSellersResponse>
-//
-//    @GET("/produto")
-//    fun getProducts(
-//        @Query("offset") offset: Int,
-//        @Query("limit") limit: Int,
-//        @Query("categoriaId") categoryId: Long
-//    ): Single<ProductsResponse>
+
+    @GET("/produto")
+    fun getProducts(
+        @Query("categoriaId") categoryId: Int
+    ): Single<ProductsResponse>
 //
 //    @GET("/produto/{produtoId}")
 //    fun getProduct(@Path("produtoId") productId: Long): Single<Product>
