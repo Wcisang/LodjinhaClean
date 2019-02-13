@@ -1,9 +1,7 @@
 package br.com.wcisang.data.remote.service
 
-import br.com.wcisang.data.remote.response.BannerResponse
-import br.com.wcisang.data.remote.response.CategoriasResponse
-import br.com.wcisang.data.remote.response.ProductsResponse
-import br.com.wcisang.data.remote.response.ProdutoBestSellersResponse
+import br.com.wcisang.data.remote.response.*
+import br.com.wcisang.domain.model.Produto
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.GET
@@ -26,10 +24,10 @@ interface LodjinhaService {
     fun getProducts(
         @Query("categoriaId") categoryId: Int
     ): Single<ProductsResponse>
-//
-//    @GET("/produto/{produtoId}")
-//    fun getProduct(@Path("produtoId") productId: Long): Single<Product>
-//
-//    @POST("/produto/{produtoId}")
-//    fun reserve(@Path("produtoId") productId: Long): Completable<ProductReservationResponse>
+
+    @GET("/produto/{produtoId}")
+    fun getProductDetail(@Path("produtoId") productId: Int): Single<Produto>
+
+    @POST("/produto/{produtoId}")
+    fun reserveProduct(@Path("produtoId") productId: Int): Completable
 }

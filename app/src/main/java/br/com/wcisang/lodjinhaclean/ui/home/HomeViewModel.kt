@@ -45,7 +45,7 @@ class HomeViewModel @Inject constructor(
         getProdutosBestSellersUseCase.execute(BestSellersObserver())
     }
 
-    inner class BannersObserver : DisposableSingleObserver<List<Banner>>() {
+    private inner class BannersObserver : DisposableSingleObserver<List<Banner>>() {
 
         override fun onSuccess(t: List<Banner>) {
             bannersLiveData.postValue(Resource.success(t))
@@ -57,7 +57,7 @@ class HomeViewModel @Inject constructor(
 
     }
 
-    inner class BestSellersObserver : DisposableSingleObserver<List<Produto>>() {
+    private inner class BestSellersObserver : DisposableSingleObserver<List<Produto>>() {
 
         override fun onSuccess(t: List<Produto>) {
             produtoLiveData.postValue(Resource.success(t))
@@ -69,7 +69,7 @@ class HomeViewModel @Inject constructor(
 
     }
 
-    inner class CategoriasObserver : DisposableSingleObserver<List<Categoria>>() {
+    private inner class CategoriasObserver : DisposableSingleObserver<List<Categoria>>() {
 
         override fun onSuccess(t: List<Categoria>) {
             categoriaLiveData.postValue(Resource.success(t))

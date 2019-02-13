@@ -10,6 +10,8 @@ class Resource<out T> constructor(val status: ResourceState, val data: T? = null
 
         fun <T> success(data: T?, message: String?) : Resource<T> = Resource(ResourceState.SUCCESS, data, message)
 
+        fun <T> success() : Resource<T> = Resource(ResourceState.SUCCESS)
+
         fun <T> error(message: String?) : Resource<T> = Resource(ResourceState.ERROR, message = message)
 
         }
