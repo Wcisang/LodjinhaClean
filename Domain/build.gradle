@@ -4,12 +4,18 @@ apply plugin: 'kotlin'
 dependencies {
 
     def dep = rootProject.ext.domainDependencies
+    def depTest = rootProject.ext.domainTestDependencies
+
     implementation dep.gson
     implementation dep.kotlinStd
     implementation dep.kotlinReflect
     implementation dep.javaxAnnotation
     implementation dep.javaxInject
     implementation dep.rxJava
+
+    implementation depTest.junit
+    implementation depTest.mockito
+    implementation depTest.assertj
 }
 
 sourceCompatibility = "1.6"

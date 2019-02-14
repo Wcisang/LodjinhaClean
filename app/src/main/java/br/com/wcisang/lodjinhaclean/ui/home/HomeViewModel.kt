@@ -9,7 +9,13 @@ import br.com.wcisang.domain.model.Banner
 import br.com.wcisang.domain.model.Categoria
 import br.com.wcisang.domain.model.Produto
 import br.com.wcisang.lodjinhaclean.ui.util.Resource
+import io.reactivex.Observable
+import io.reactivex.Scheduler
+import io.reactivex.Single
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
@@ -40,9 +46,21 @@ class HomeViewModel @Inject constructor(
         getCategoriasUseCase.execute(CategoriasObserver())
     }
 
-    fun getBestSellers() {
+    fun getBestSellers() : Single<String>{
         produtoLiveData.postValue(Resource.loading())
         getProdutosBestSellersUseCase.execute(BestSellersObserver())
+        return Single.just("")
+    }
+
+    fun teste () {
+        var single = getBestSellers()
+
+        var d = CompositeDisposable()
+        d.add(single
+            .subscribe { teste -> println(teste) })
+        d.dispose()
+
+
     }
 
     private inner class BannersObserver : DisposableSingleObserver<List<Banner>>() {

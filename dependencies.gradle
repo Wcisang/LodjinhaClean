@@ -11,6 +11,21 @@ ext {
     okHttpVersion = '3.8.1'
     retrofitVersion = '2.3.0'
 
+
+
+    //Testing
+    jUnitVersion = '4.12'
+    assertJVersion = '3.8.0'
+    mockitoKotlinVersion = '1.5.0'
+    robolectricVersion = '3.4.2'
+    mockitoVersion = '1.9.5'
+    mockitoAndroidVersion = '2.8.9'
+    androidSupportRunnerVersion = '1.0.0'
+    androidSupportRulesVersion = '1.0.0'
+    dexmakerMockitoversion = '2.2.0'
+    runnerVersion = '0.5'
+    espressoVersion = '3.0.0'
+
     gson = "com.google.code.gson:gson:$gsonVersion"
     kotlinStd = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
@@ -33,6 +48,14 @@ ext {
     retrofitConverter = "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
     retrofitAdapter = "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
 
+
+
+    junit = "junit:junit:${jUnitVersion}"
+    mockito = "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
+    assertj = "org.assertj:assertj-core:${assertJVersion}"
+
+
+
     domainDependencies = [
             gson: gson,
             kotlinStd: kotlinStd,
@@ -40,6 +63,12 @@ ext {
             javaxAnnotation: javaxAnnotation,
             javaxInject: javaxInject,
             rxJava: rxJava
+    ]
+
+    domainTestDependencies = [
+            junit: junit,
+            mockito: mockito,
+            assertj: assertj
     ]
 
     dataDependencies = [
