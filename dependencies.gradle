@@ -53,6 +53,7 @@ ext {
     junit = "junit:junit:${jUnitVersion}"
     mockito = "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
     assertj = "org.assertj:assertj-core:${assertJVersion}"
+    kotlinJUnit = "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
 
 
 
@@ -80,6 +81,13 @@ ext {
             okHttp: okHttp,
             okHttpLogger: okHttpLogger,
             retrofitAdapter: retrofitAdapter
+    ]
+
+    dataTestDependencies = [
+            junit: junit,
+            mockito: mockito,
+            assertj: assertj,
+            kotlinJUnit: kotlinJUnit
     ]
 
     uiDependencies = [

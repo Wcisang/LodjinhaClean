@@ -5,6 +5,8 @@ dependencies {
     implementation project(':Domain')
 
     def dep = rootProject.ext.dataDependencies
+    def depTest = rootProject.ext.dataTestDependencies
+
 
     implementation dep.rxJava
     implementation dep.retrofit
@@ -14,6 +16,11 @@ dependencies {
     implementation dep.okHttp
     implementation dep.okHttpLogger
     implementation dep.retrofitAdapter
+
+    testImplementation depTest.junit
+    testImplementation depTest.kotlinJUnit
+    testImplementation depTest.mockito
+    testImplementation depTest.assertj
 }
 
 sourceCompatibility = "1.6"
