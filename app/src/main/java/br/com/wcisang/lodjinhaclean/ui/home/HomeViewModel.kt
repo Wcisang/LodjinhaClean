@@ -46,22 +46,11 @@ class HomeViewModel @Inject constructor(
         getCategoriasUseCase.execute(CategoriasObserver())
     }
 
-    fun getBestSellers() : Single<String>{
+    fun getBestSellers() {
         produtoLiveData.postValue(Resource.loading())
         getProdutosBestSellersUseCase.execute(BestSellersObserver())
-        return Single.just("")
     }
 
-    fun teste () {
-        var single = getBestSellers()
-
-        var d = CompositeDisposable()
-        d.add(single
-            .subscribe { teste -> println(teste) })
-        d.dispose()
-
-
-    }
 
     private inner class BannersObserver : DisposableSingleObserver<List<Banner>>() {
 
