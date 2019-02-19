@@ -7,7 +7,7 @@ import br.com.wcisang.domain.repository.CategoriaRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
-class GetCategoriasUseCase @Inject constructor(
+open class GetCategoriasUseCase @Inject constructor(
     private val categoriaRepository: CategoriaRepository,
     postExecutionThread: PostExecutionThread
 ) : SingleUseCase<List<Categoria>, Nothing?>(postExecutionThread) {

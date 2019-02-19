@@ -7,10 +7,10 @@ import br.com.wcisang.domain.repository.BannerRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
-class GetBannersUseCase @Inject constructor(
+open class GetBannersUseCase @Inject constructor(
     var bannerRepository: BannerRepository,
     postExecutionThread: PostExecutionThread
-) : SingleUseCase<List<Banner>, Nothing>(postExecutionThread){
+) : SingleUseCase<List<Banner>, Nothing?>(postExecutionThread){
 
 
     override fun buildUseCaseObservable(params: Nothing?): Single<List<Banner>> {

@@ -31,6 +31,7 @@ dependencies {
     implementation project(':Data')
 
     def dep = rootProject.ext.uiDependencies
+    def depTest = rootProject.ext.uiTestDependencies
 
     implementation dep.dagger
     implementation dep.rxKotlin
@@ -47,7 +48,14 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.1.0-alpha04'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.12'
+
+    testImplementation depTest.junit
+    testImplementation depTest.kotlinJUnit
+    testImplementation depTest.assertj
+    testImplementation depTest.mockito
+    testImplementation depTest.robolectric
+    testImplementation depTest.archTesting
+
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
 }

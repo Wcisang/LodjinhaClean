@@ -54,6 +54,8 @@ ext {
     mockito = "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
     assertj = "org.assertj:assertj-core:${assertJVersion}"
     kotlinJUnit = "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
+    robolectric = "org.robolectric:robolectric:${robolectricVersion}"
+    archTesting = "android.arch.core:core-testing:${archCompVersion}"
 
 
 
@@ -100,5 +102,14 @@ ext {
             javaxAnnotation: javaxAnnotation,
             javaxInject: javaxInject,
             archCompExtensions: archCompExtensions
+    ]
+
+    uiTestDependencies = [
+            junit:              junit,
+            kotlinJUnit:        kotlinJUnit,
+            assertj:            assertj,
+            mockito:            mockito,
+            robolectric:        robolectric,
+            archTesting:        archTesting
     ]
 }
